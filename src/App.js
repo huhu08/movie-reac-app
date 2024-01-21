@@ -1,25 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import MovieList from './components/MovieList';
 
 function App() {
+  const [movies,setMovies]=useState([
+    {Title:"Guardians of the Galaxy Vol. 2",
+    Year:"2017",
+    Rated:"PG-13",
+    Released:"05 May 2017",
+    Poster:	"https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
+  }
+  ])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   
+   <div>
+    <MovieList movies={movies} />
     </div>
   );
+
 }
 
 export default App;
