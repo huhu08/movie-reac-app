@@ -1,22 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from 'react';
 import MovieList from './components/MovieList';
 
 function App() {
-  const [movies,setMovies]=useState([
-    {Title:"Guardians of the Galaxy Vol. 2",
-    Year:"2017",
-    Rated:"PG-13",
-    Released:"05 May 2017",
-    Poster:	"https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
+  const [movies,setMovies]=useState([]);
+  const getMovieRequest=async ()=>{
+    const url='http://www.omdbapi.com/?i=tt3896198&apikey=f611b325';
+    //const url='https://jsonplaceholder.typicode.com/posts';
+    const response=await fetch(url);
+    const responseJson=await response.json();
+    
+    setMovies([responseJson]);
+   // console.log(responseJson);
+    console.log(movies);
   }
-  ])
   
+  useEffect(()=>{
+    getMovieRequest();
+  },[movies])
   return (
    
-   <div>
+   <div className='container-fluid'>
+    <div className='row'>
     <MovieList movies={movies} />
+    </div>
     </div>
   );
 

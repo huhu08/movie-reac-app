@@ -1,13 +1,14 @@
 import React from "react";
-const MovieList =(props)=>{
+const MovieList =({movies})=>{
     return (
+        
         <>
-        {props.movies
-        .map((movie,index)=> 
-        (<div>
+
+        {movies.map((movie,index)=> 
+        (<div className="d-flex justify-content-start m-3">
             <img src={movie.Poster} alt='movie.Rated'></img>
             <p>{movie.Year}</p>
-            <h3>{movie.Title}</h3>
+            <h3>{movie.title}</h3>
             </div>
             ))}
         </>
