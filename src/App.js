@@ -10,12 +10,12 @@ function App() {
 
   const getMovieRequest=async ()=>{
     //const url='https://api.themoviedb.org/3/movie/550?s=api_key=f527be9ffb3b1a9e32cd6428bc9e7f3f';
-    const url='http://www.omdbapi.com/?s=starwars&apikey=f611b325';
+    const url='https://api.sampleapis.com/movies/animation';
     //const url='https://jsonplaceholder.typicode.com/posts';
     const response=await fetch(url);
     const responseJson=await response.json();
     
-    setMovies([responseJson]);
+    setMovies(responseJson);
   
    // console.log(responseJson);
     console.log(movies);
