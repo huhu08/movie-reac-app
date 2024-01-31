@@ -6,19 +6,16 @@ import MovieList from './components/MovieList';
 
 function App() {
   const [movies,setMovies]=useState([]);
-  //const [serchValue,setSearchValue]=useState([]);
 
   const getMovieRequest=async ()=>{
-    //const url='https://api.themoviedb.org/3/movie/550?s=api_key=f527be9ffb3b1a9e32cd6428bc9e7f3f';
-    const url='https://api.sampleapis.com/movies/animation';
-    //const url='https://jsonplaceholder.typicode.com/posts';
+    const url='http://localhost:10038/wp-json/movies-api/v1/movies';
     const response=await fetch(url);
-    const responseJson=await response.json();
+   const responseJson=await response.json();
     
     setMovies(responseJson);
   
-   // console.log(responseJson);
-    console.log(movies);
+    console.log(response);
+  console.log(movies);
   }
   
   useEffect(()=>{
