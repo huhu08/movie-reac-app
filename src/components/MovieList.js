@@ -8,7 +8,7 @@ const MovieList =({movies})=>{
 
         (
         <div className="card d-flex justify-content-start m-3">
-            <img src={movie.postURL} alt='pic'/>
+            <img src={movie.posterURL} />
             <h3>{movie.id}</h3>
             <h3>{movie.title}</h3>
             
