@@ -7,7 +7,7 @@ const MovieList =({movies})=>{
         {Array.isArray(movies) && movies.map((movie,id)=> 
 
         (
-        <div className="card d-flex justify-content-start m-3">
+        <div className="card d-flex justify-content-start m-4">
             <img src={movie.posterURL} />
             <h3>{movie.id}</h3>
             <h3>{movie.title}</h3>
